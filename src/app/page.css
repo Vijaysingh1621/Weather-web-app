@@ -1,0 +1,27 @@
+
+body{
+    margin: 0;
+    height: 100vh;
+    position: relative;
+    background-image: url("../../public/clear-sky.jpg.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:10%;
+
+    
+}
+
+.box{
+    display: flex;
+    display: block;
+    flex-direction: column;
+    margin-top: -220px;
+}
