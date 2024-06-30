@@ -16,11 +16,11 @@ const Home = () => {
 
   const fetchWeather= async()=>{
     try{
-      const response=await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${process.env.Weather_api_key})}`)
+      const response=await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
       
       console.log(response)
     }catch{
-      console.error("Error fetching weather data:",error)
+      console.error("Error fetching weather data:")
     }
   }
   return (
@@ -41,13 +41,13 @@ const Home = () => {
 
 
 
-    <div className='container'>
+    <div className='flex justify-center items-center mr-5 ml-5 '>
       <form onSubmit={(e)=>{
         e.preventDefault();
         fetchWeather();
       }}>
       
-        <div  className="w-[440] h-[440px] px-8 rounded-2xl flex justify-center items-center bg-gradient-to-tr  text-white shadow-lg flex-col">
+        <div  className="w-[640px] h-[440px] px-8 rounded-2xl flex justify-center items-center bg-gradient-to-tr  text-white shadow-lg flex-col backdrop-blur-[6px] bg-white bg-opacity-20 sm:w-[390px] mt-[100px] sn:w-auto mt-[100px] ">
         <div className='box'>
         <Input
         className='mb-5 '
@@ -84,12 +84,19 @@ const Home = () => {
             <SearchIcon className="text-black/50 mb-0.5 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
           }
         />
-        <Button  type='Submit' radius="full" className="bg-gradient-to-tr from-green-500 to-blue-500 text-white shadow-lg block " >
+        <Button  type='Submit' radius="full" className="bg-gradient-to-tr  gray-100  text-black shadow-lg block " >
               Submit
             </Button>
+            {weather?(
+        <div>
+          <h2>weather in {weather.name},{weather.sys.country}</h2>
+          <p>Description: {weather.weather[0].description}</p>
+          <p>Temperature: {weather.main.temp}</p>
+        </div>):(<p className='mt-5 text-[20px]'>⚠️ no weather data available</p>)}
             
         </div>
         </div>
+          
 </form>
 </div>
 </>

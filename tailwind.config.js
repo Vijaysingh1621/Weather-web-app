@@ -16,7 +16,14 @@ module.exports = {
       },
     },
    
+    screens: {
+      'sm':{'max': '550px'}, // Custom screen size
+      'sn':{'max':'400px'} ,// Another custom screen size
+    },
+   
   },
+ 
+  
   darkMode: "class",
   plugins: [nextui()]
 
