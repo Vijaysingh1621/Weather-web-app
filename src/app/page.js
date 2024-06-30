@@ -16,12 +16,18 @@ const Home = () => {
 
   const fetchWeather= async()=>{
     try{
-      const response=await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
+      const response=await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
+      setWeather(response.data)
       
-      console.log(response)
+      console.log(response.data)
     }catch{
       console.error("Error fetching weather data:")
     }
+  }
+
+
+  const clearInput=()=>{
+    setCity("")
   }
   return (
     <>
@@ -40,17 +46,17 @@ const Home = () => {
     </div> */}
 
 
-
-    <div className='flex justify-center items-center mr-5 ml-5 '>
+<div className='flex h-[100vh] justify-center items-center '>
+    <div className='flex justify-center items-center mr-5 ml-5 mt-[-100px]'>
       <form onSubmit={(e)=>{
         e.preventDefault();
         fetchWeather();
       }}>
       
-        <div  className="w-[640px] h-[440px] px-8 rounded-2xl flex justify-center items-center bg-gradient-to-tr  text-white shadow-lg flex-col backdrop-blur-[6px] bg-white bg-opacity-20 sm:w-[390px] mt-[100px] sn:w-auto mt-[100px] ">
-        <div className='box'>
+        <div  className="w-[640px] h-[440px] px-8 rounded-2xl flex justify-center items-center  bg-gradient-to-tr  text-white shadow-lg flex-col backdrop-blur-[6px] bg-white bg-opacity-20 sm:w-[390px]  sn:w-auto mt-[50px] ">
+        <div className='mt-[-250px] sm:mt-[-250px]'>
         <Input
-        className='mb-5 '
+        className='mb-5 w-[280px] sm:w-[250px]'
           label="Search"
           isClearable
           radius="lg"
@@ -84,20 +90,31 @@ const Home = () => {
             <SearchIcon className="text-black/50 mb-0.5 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
           }
         />
-        <Button  type='Submit' radius="full" className="bg-gradient-to-tr  gray-100  text-black shadow-lg block " >
+        <div className='flex block justify-center items-center gap-5'>
+        <Button  type='Submit' radius="full" className="bg-gradient-to-tr  gray-100  text-black shadow-lg block hover:border-[1px] hover:border-black" >
               Submit
             </Button>
-            {weather?(
-        <div>
-          <h2>weather in {weather.name},{weather.sys.country}</h2>
+            <Button  onClick={clearInput} radius="full" className="bg-gradient-to-tr  gray-100  text-black shadow-lg block hover:border-[1px] hover:border-black" >
+              clear
+            </Button>
+          </div>
+          
+            
+           
+        </div>
+          {weather?(
+        <div className=' mt-5 mb-[-130px] flex-row justify-evenly mr-[80px] sm:mb-[-130px]'>
+          <p className='text-[20px]'>weather in {weather.name},{weather.sys.country}</p>
           <p>Description: {weather.weather[0].description}</p>
-          <p>Temperature: {weather.main.temp}</p>
-        </div>):(<p className='mt-5 text-[20px]'>⚠️ no weather data available</p>)}
+          <p className='text-[60px]'>{weather.main.temp.toFixed(0)}&#176;C</p>
+        </div>):(<p className='mt-5 '>⚠️ no weather data available</p>)}
+        
             
         </div>
-        </div>
+        
           
 </form>
+</div>
 </div>
 </>
   )

@@ -3,7 +3,7 @@ body{
     margin: 0;
     height: 100vh;
     position: relative;
-    background-image: url("../../public/rain.jpg");
+    background-image: url("../../public/clear-sky.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
