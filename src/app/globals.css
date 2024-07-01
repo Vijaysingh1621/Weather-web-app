@@ -12,3 +12,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+/* tailwind.css or a separate CSS file */
+@layer utilities {
+  .loader {
+    @apply w-[60px] aspect-[4] animate-l4;
+    --tw-bg-opacity: 1;
+    background: radial-gradient(circle closest-side at left 6px top 50%, #ffffff 90%, #ffffff00),
+                radial-gradient(circle closest-side, #ffffff 90%, #ffffff00),
+                radial-gradient(circle closest-side at right 6px top 50%, #ffffff 90%, #ffffff00);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+}

@@ -2,7 +2,6 @@
 body{
     margin: 0;
     height: 100vh;
-    background-image: url("../../public/images/snow.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

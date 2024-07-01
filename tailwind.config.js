@@ -9,6 +9,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+
+      keyframes: {
+        l4: {
+          '0%': { width: '60px', aspectRatio: '4' },
+          '100%': { width: '25px', aspectRatio: '1' },
+        },
+      },
+      animation: {
+        l4: 'l4 1s infinite alternate',
+      },
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
