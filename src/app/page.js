@@ -4,6 +4,8 @@ import axios from 'axios';
 import "./page.css"
 import {Button, Input} from "@nextui-org/react";
 import {SearchIcon} from "./SearchIcon";
+import cloudImg from "../../public/cloud.svg"
+
 
 
 const Home = () => {
@@ -19,7 +21,7 @@ const Home = () => {
       
       console.log(response.data)
     }catch{
-      console.error("Error fetching weather data:",error)
+      console.error("Error fetching weather data:")
     }
   }
 
@@ -43,15 +45,18 @@ const Home = () => {
     </div> */}
 
 
-<div className='flex h-[100vh] justify-center items-center '>
-    <div className='flex justify-center items-center mr-5 ml-5 mt-[-100px]'>
+<div className='flex h-[100vh] justify-center items-center flex-col'>
+        <p className='text-[30px]  font-[600] mt-[-100px] gradient-text'>Check <span className='text-[30px] gradient-text1'>weather</span> in your city</p>
+          
+    <div className='flex justify-center items-center mr-5 ml-5 mt-[-50px]'>
+      
       <form onSubmit={(e)=>{
         e.preventDefault();
         fetchWeather();
       }}>
       
         <div  className="w-[640px] h-[440px] px-8 rounded-2xl flex justify-center items-center  bg-gradient-to-tr  text-white shadow-lg flex-col backdrop-blur-[6px] bg-white bg-opacity-20 sm:w-[390px]  sn:w-auto mt-[50px] ">
-        <div className='mt-[-250px] sm:mt-[-250px]'>
+        <div className='mt-[-180px] sm:mt-[-250px]'>
         <Input
         className='mb-5 w-[280px] sm:w-[250px]'
           label="Search"
@@ -87,7 +92,7 @@ const Home = () => {
             <SearchIcon className="text-black/50 mb-0.5 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
           }
         />
-        <div className='flex block justify-center items-center gap-5'>
+        <div className='flex  justify-center items-center gap-5'>
         <Button  type='Submit' radius="full" className="bg-gradient-to-tr  gray-100  text-black shadow-lg block hover:border-[1px] hover:border-black" >
               Submit
             </Button>
@@ -100,10 +105,17 @@ const Home = () => {
            
         </div>
           {weather?(
-        <div className=' mt-5 mb-[-130px] flex-row justify-evenly mr-[80px] sm:mb-[-130px]'>
+        <div className=' mt-5 mb-[-130px] flex-row text-gray-900 justify-evenly mr-[80px] sm:mb-[-230px]'>
           <p className='text-[20px]'>weather in {weather.name},{weather.sys.country}</p>
-          <p>Description: {weather.weather[0].description}</p>
+          <p className='tezt-[20px]'> {weather.weather[0].description}</p>
           <p className='text-[60px]'>{weather.main.temp.toFixed(0)}&#176;C</p>
+          <div className='grid grid-cols-2 gap-1 '>
+          <p className='tezt-[20px]'>Humidity:{weather.main.humidity}&#176;C</p>
+          <p>Feels like:{weather.main.feels_like}</p>
+          <p className='mr-2'>Max Temp: {weather.main.temp_max}&#176;C</p>
+          <p>Min Temp: {weather.main.temp_min}&#176;C</p>
+          </div>
+          
         </div>):(<p className='mt-5 '>⚠️ no weather data available</p>)}
         
             
