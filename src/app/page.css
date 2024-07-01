@@ -2,8 +2,7 @@
 body{
     margin: 0;
     height: 100vh;
-    position: relative;
-    background-image: url("../../public/clear-sky.jpg");
+    background-image: url("../../public/images/snow.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

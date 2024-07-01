@@ -13,6 +13,12 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          'clear-sky': "url('/clear-sky.jpg')",
+        'cloudy': "url('/cloudy.jpg')",
+        'rain': "url('/rain2.jpg')",
+        'snow': "url('/snow.jpg')",
+        'thunderstorm': "url('/thunderstorm.jpg')",
+        'mist': "url('/mist.jpg')",
       },
     },
    
