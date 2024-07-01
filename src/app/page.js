@@ -14,7 +14,7 @@ const Home = () => {
 
   const fetchWeather= async()=>{
     try{
-      const response=await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=60e5fbc22848d3d14bf0c0123f9380c7`)
+      const response=await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
       setWeather(response.data)
       
       console.log(response.data)
