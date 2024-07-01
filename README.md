@@ -2,106 +2,57 @@
 
 ---
 
-# Weather Web App
+## Weather Web App
 
-A sleek and modern weather web application built using Next.js, Tailwind CSS, and Next UI. This application provides users with up-to-date weather information and forecasts for any location.
+This is a dynamic weather web application built using Next.js and styled with Tailwind CSS, incorporating Next UI components. The app fetches real-time weather data and updates the background dynamically based on the current weather conditions.
 
-## Features
+### Features
+- **Real-Time Weather Data**: Fetches current weather information using a weather API.
+- **Dynamic Backgrounds**: Changes the background according to the weather conditions (e.g., sunny, rainy, snowy).
+- **Next.js**: Utilizes the powerful features of Next.js for server-side rendering and static site generation.
+- **Tailwind CSS**: Styled with Tailwind CSS for rapid UI development and customization.
+- **Next UI**: Uses Next UI components for a polished and responsive user interface.
 
-- **Current Weather Information:** Displays the current weather, including temperature, humidity, wind speed, and more.
-- **Weather Forecast:** Provides a 7-day weather forecast.
-- **Responsive Design:** Optimized for both desktop and mobile devices.
-- **Search Functionality:** Allows users to search for weather information by city or location.
-- **Dark Mode:** Toggle between light and dark themes for a better user experience.
+### Getting Started
+To run the project locally, follow these steps:
 
-## Technologies Used
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/weather-web-app.git
+   ```
 
-- **Next.js:** A React framework for building fast and user-friendly web applications.
-- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
-- **Next UI:** A library of high-quality UI components for building interactive and customizable user interfaces.
+2. **Navigate to the project directory**:
+   ```bash
+   cd weather-web-app
+   ```
 
-## Getting Started
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-### Prerequisites
+4. **Set up environment variables**:
+   Create a `.env.local` file in the root directory and add your weather API key:
+   ```plaintext
+   NEXT_PUBLIC_WEATHER_API_KEY=your_api_key
+   ```
 
-- Node.js (v14 or higher)
-- npm or yarn
+5. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/weather-web-app.git
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd weather-web-app
-```
-
-3. Install the dependencies:
-
-```bash
-npm install
-# or
-yarn install
-```
-
-### Running the App
-
-To start the development server, run:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open your browser and visit [http://localhost:3000](http://localhost:3000) to see the app in action.
-
-### Building for Production
-
-To build the application for production, run:
-
-```bash
-npm run build
-# or
-yarn build
-```
+6. **Open the app in your browser**:
+   Visit [http://localhost:3000](http://localhost:3000)
 
 ### Deployment
+To deploy the app, you can use platforms like Vercel, Netlify, or any other hosting service that supports Next.js.
 
-The app can be deployed to Vercel, Netlify, or any other platform that supports Next.js.
+### Contributing
+Feel free to contribute by submitting issues or pull requests. All contributions are welcome!
 
-## Project Structure
-
-```plaintext
-weather-web-app/
-├── public/
-│   ├── icons/
-│   ├── images/
-│   └── ...
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── styles/
-│   └── ...
-├── .gitignore
-├── package.json
-├── tailwind.config.js
-└── ...
-```
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any bugs or enhancements.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+### License
+This project is licensed under the MIT License.
 
 ---
 
-Feel free to customize this description further to better match your project's specific details and requirements.
