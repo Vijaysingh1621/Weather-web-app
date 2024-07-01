@@ -19,7 +19,7 @@ const Home = () => {
       
       console.log(response.data)
     }catch{
-      console.error("Error fetching weather data:")
+      console.error("Error fetching weather data:",error)
     }
   }
 
