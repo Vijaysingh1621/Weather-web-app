@@ -6,8 +6,6 @@ import {Button, Input} from "@nextui-org/react";
 import {SearchIcon} from "./SearchIcon";
 
 
-
-
 const Home = () => {
 
   const[weather,setWeather]=useState(null);
