@@ -86,6 +86,7 @@ const Home = () => {
                 className="mb-5 w-[280px] sm:w-[250px]"
                 label="Search"
                 isClearable
+                required
                 radius="lg"
                 classNames={{
                   label: "text-black/50 dark:text-white/90",
@@ -119,14 +120,14 @@ const Home = () => {
                 <Button
                   type="submit"
                   radius="full"
-                  className="bg-gradient-to-tr gray-100 text-black shadow-lg block hover:border-[1px] hover:border-black"
+                  className="bg-gradient-to-tr gray-100 text-black shadow-lg block hover:bg-white"
                 >
                   Submit
                 </Button>
                 <Button
                   onClick={clearInput}
                   radius="full"
-                  className="bg-gradient-to-tr gray-100 text-black shadow-lg block hover:border-[1px] hover:border-black"
+                  className="bg-gradient-to-tr gray-100 text-black shadow-lg block  hover:bg-white"
                 >
                   Clear
                 </Button>
